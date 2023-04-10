@@ -1,15 +1,24 @@
-def greet(name):
-    print(f"hello {name}")
-    print(f"how are you doing {name}? ")
-    print("Isn't the weather nice ?")
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt ")
+text = input("Type your message: ").lower()
+shift = int(input("type the shif number"))
+
+def encrypt(text=text, shift=shift ):
+    word = ""
+    for latter in text:
+        test = alphabet.index(latter)
+        result = alphabet[test+shift]
+        word += result
+    print(word)
+
+def decrypt(text=text, shift=shift ):
+    word = ""
+    for latter in text:
+        test = alphabet.index(latter)
+        result = alphabet[test-shift]
+        word += result
+    print(word)
 
 
-
-greet("chi")
-
-def greet_with(name ,location):
-    print(f"hello {name}")
-    print(f"what is it like in {location}")
-
-greet_with("nayan","yaounde")
-greet_with(name="akwa", location="bamenda")
+decrypt()
